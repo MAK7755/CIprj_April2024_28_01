@@ -14,24 +14,14 @@ namespace CIprj_April2024
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //Author: Mohammad Kiani Sheikhabadi
+
+        //Description: This function generates random words.
+        public void button1_Click(object sender, EventArgs e)
         {
-            int length = (int)numericUpDown1.Value;
-            string randomString = RandomString(length);
-            textBox1.Text = randomString;
+
         }
 
-        private string RandomString(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            StringBuilder stringBuilder = new StringBuilder();
-            Random random = new Random();
-            for (int i = 0; i < length; i++)
-            {
-                stringBuilder.Append(chars[random.Next(chars.Length)]);
-            }
-            return stringBuilder.ToString();
-        }
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)

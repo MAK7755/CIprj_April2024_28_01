@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
 
 build_job:
   stage: build
@@ -7,3 +8,15 @@ build_job:
     - 'echo "Building..."'
   except:
     - tags
+
+test_job:
+  stage: test
+  script:
+    - |
+      current_minute=$(date +%M)
+      if (( $current_minute % 15 == 0 )); then
+        echo "Running tests..."
+        # Run your test command here
+      else
+        echo "Skipping tests. Current minute: $current_minute"
+      fi
