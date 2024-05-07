@@ -19,4 +19,4 @@ test_job:
     - 'echo "Testing..."'
     - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" /testcontainer:"D:\CSharp_Projects\CIprj_April2024\CIprj_April2024\bin\Debug\net6.0-windows\CIprj_April2024.dll"'
   dependencies:
-    - build
+    - build_job
