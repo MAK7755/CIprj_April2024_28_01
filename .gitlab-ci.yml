@@ -1,7 +1,8 @@
 variables:
   PROJECT_CI: "CIprj_April2024"
 before_script:
-  - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\NuGet restore "CIprj_April2024.sln"
+  - "$C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\NuGet" restore "CIprj_April2024.sln"
+
 stages:
   - build
   - test
