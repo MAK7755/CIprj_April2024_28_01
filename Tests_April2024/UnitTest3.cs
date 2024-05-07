@@ -9,8 +9,12 @@ namespace Tests_April2024
     [TestFixture]
     public class Form1Tests
     {
+        //Author: Mohammad Kiani Sheikhabadi
+
+        /*Description: This function checks if button2_Click method 
+         is working properly*/
         [Test]
-        public void Button2_Click_ChecksForRepeatedLetters()
+        public void Button2_Click_Check()
         {
             Form1 form = new Form1();
             form.textBox2.Text = "TestString"; 

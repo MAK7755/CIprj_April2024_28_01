@@ -1,3 +1,6 @@
+variables:
+  PROJECT_CI: "CIprj_April2024"
+
 stages:
   - build
   - test
@@ -5,11 +8,15 @@ stages:
 build_job:
   stage: build
   script:
-    - 'echo "Building..."'
-  except:
-    - tags
+    - 'echo "building..."'
+    - '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "D:\CSharp_Projects\CIprj_April2024\CIprj_April2024.sln"'
+  artifacts:
+    untracked: true
 
 test_job:
   stage: test
   script:
     - 'echo "Testing..."'
+    - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" /testcontainer:"D:\CSharp_Projects\CIprj_April2024\CIprj_April2024\bin\Debug\net6.0-windows\CIprj_April2024.dll"'
+  dependencies:
+    - build
