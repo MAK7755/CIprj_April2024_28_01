@@ -9,7 +9,7 @@ build_job:
   stage: build
   script:
     - 'echo "building..."'
-    - '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "D:\CSharp_Projects\CIprj_April2024\CIprj_April2024.sln"'
+    - '"C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\msbuild.exe" /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "D:\CSharp_Projects\CIprj_April2024\CIprj_April2024.sln"'
   artifacts:
     untracked: true
 
@@ -17,6 +17,6 @@ test_job:
   stage: test
   script:
     - 'echo "Testing..."'
-    - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" /testcontainer:"D:\CSharp_Projects\CIprj_April2024\CIprj_April2024\bin\Debug\net6.0-windows\CIprj_April2024.dll"'
+    - '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\MSTest.exe" /testcontainer:"D:\CSharp_Projects\CIprj_April2024\CIprj_April2024\bin\Debug\net6.0-windows\CIprj_April2024.dll"'
   dependencies:
     - build_job
