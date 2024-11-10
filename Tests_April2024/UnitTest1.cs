@@ -18,7 +18,7 @@ namespace Tests_April2024
             Form1 form = new Form1();
             int length = 6;
             string result = form.RandomString(length);
-            Assert.Equals(length, result.Length);
+            Assert.Equal(length, result.Length);
         }
     }
 }
