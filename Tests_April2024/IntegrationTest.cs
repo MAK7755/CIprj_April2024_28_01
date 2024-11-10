@@ -34,7 +34,7 @@ namespace Tests_April2024
             form.button2_Click(null, EventArgs.Empty);  
 
             bool repeated = bool.Parse(form.label5.Text);
-            Assert.True(repeated, "The text should not have any repeated letters...");
+            Assert.False(repeated, "The text should not have any repeated letters...");
         }
     }
 }
