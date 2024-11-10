@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Tests_April2024
 {
     [TestFixture]
-    public class Form1Tests
+    public class Form1_Tests
     {
         //Author: Mohammad Kiani Sheikhabadi
 
