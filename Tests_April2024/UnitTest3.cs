@@ -19,7 +19,7 @@ namespace Tests_April2024
             Form1 form = new Form1();
             form.textBox2.Text = "TestString"; 
             form.button2_Click(null, null);
-            Assert.AreEqual("True", form.label5.Text); 
+            Assert.Equal("True", form.label5.Text); 
         }
     }
 }
