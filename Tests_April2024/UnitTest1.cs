@@ -2,7 +2,6 @@ using NUnit.Framework;
 
 namespace Tests_April2024
 {
-    [TestFixture]
     public class Form1Test
     {
 
@@ -11,8 +10,7 @@ namespace Tests_April2024
         /*Description: This function checks if the string created
          by the RandomString method has a correct lenght.*/
 
-        [Test]
-
+        [Fact]
         public void correctLenght()
         {
             Form1 form = new Form1();
