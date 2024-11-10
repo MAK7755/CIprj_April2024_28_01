@@ -12,6 +12,7 @@ on:
 jobs:
   build:
 
+    # Use a Windows runner instead of Ubuntu
     runs-on: windows-latest
 
     steps:
