@@ -29,6 +29,12 @@ test:
   dependencies:
     - build
   script:
+    - dotnet test CIprj_April2024.sln --logger:trx --results-directory TestResults  # Run tests and log results
+  artifacts:
+    when: always
+    paths:
+      - TestResults/*.trx  # Save the test results as artifacts
+  allow_failure: false
     - dotnet test --logger:trx --results-directory TestResults  # Run tests and log results
   artifacts:
     when: always
