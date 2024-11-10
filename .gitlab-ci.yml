@@ -2,14 +2,35 @@ stages:
   - build
   - test
 
-build_job:
-  stage: build
-  script:
-    - 'echo "Building..."'
-  except:
-    - tags
+variables:
+  DOTNET_VERSION: "7.0"  # Specify the .NET SDK version
 
-test_job:
-  stage: test
+# Cache dependencies for faster builds
+cache:
+  paths:
+    - ~/.nuget/packages/
+
+# Build stage
+build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
-    - 'echo "Testing..."'
+    - dotnet restore  # Restore NuGet packages
+    - dotnet build --configuration Release  # Build the project in Release mode
+  artifacts:
+    paths:
+      - bin/  # Save the build output to use in later stages
+
+# Test stage
+test:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
+  dependencies:
+    - build
+  script:
+    - dotnet test --logger:trx --results-directory TestResults  # Run tests and log the results in TestResults directory
+  artifacts:
+    when: always
+    paths:
+      - TestResults/*.trx  # Save the test results as artifacts
+  allow_failure: false  # Fail the pipeline if tests fail
