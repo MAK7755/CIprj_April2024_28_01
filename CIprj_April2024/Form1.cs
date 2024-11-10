@@ -9,7 +9,7 @@ namespace CIprj_April2024
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -38,7 +38,7 @@ namespace CIprj_April2024
             return result;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
