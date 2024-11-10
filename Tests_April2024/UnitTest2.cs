@@ -20,7 +20,7 @@ namespace Tests_April2024
             Form1 form = new Form1();
             form.numericUpDown1.Value = 10; 
             form.button1_Click(null, null);
-            Assert.IsFalse(string.IsNullOrEmpty(form.textBox1.Text));
+            Assert.False(string.IsNullOrEmpty(form.textBox1.Text));
         }
     }
 }
