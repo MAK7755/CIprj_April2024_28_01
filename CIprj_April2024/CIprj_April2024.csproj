@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-	  <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
 
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.9" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.9" />
+	</ItemGroup>
 </Project>
