@@ -1,8 +1,3 @@
-variables:
-  PROJECT_CI: "CIprj_April2024"
-before_script:
-  - '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\NuGet restore CIprj_April2024.sln"'
-
 stages:
   - build
   - test
@@ -12,6 +7,7 @@ variables:
 
 # Cache dependencies for faster builds
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - ~/.nuget/packages/
 
@@ -20,9 +16,11 @@ build:
   stage: build
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
-    - 'echo "Building..."'
-  except:
-    - tags
+    - dotnet restore CIprj_April2024.sln  # Restore dependencies
+    - dotnet build CIprj_April2024.sln --configuration Release  # Build in Release mode
+  artifacts:
+    paths:
+      - bin/  # Save the build output to use in later stages
 
 # Test stage
 test:
@@ -31,4 +29,9 @@ test:
   dependencies:
     - build
   script:
-    - 'echo "Testing..."'
+    - dotnet test CIprj_April2024.sln --logger:trx --results-directory TestResults  # Run tests and log results
+  artifacts:
+    when: always
+    paths:
+      - TestResults/*.trx  # Save the test results as artifacts
+  allow_failure: false
