@@ -158,11 +158,12 @@
         public TextBox textBox1;
         public NumericUpDown numericUpDown1;
         public Button button1;
+        public Button button2;
         public Label label2;
         public Label label3;
         public TextBox textBox2;
         public Label label4;
         public Label label5;
-        public Button button2;
+        
     }
 }
