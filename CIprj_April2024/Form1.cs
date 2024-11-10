@@ -44,7 +44,7 @@ namespace CIprj_April2024
         }
         /*Description: This function returns True/False if there is/isn't
         repeated letters in the given text.*/
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             string inputText = textBox2.Text;
 
