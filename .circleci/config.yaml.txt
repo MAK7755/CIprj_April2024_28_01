@@ -1,0 +1,43 @@
+version: 2.1
+
+executors:
+  dotnet-executor:
+    docker:
+      - image: mcr.microsoft.com/dotnet/sdk:7.0 # .NET SDK Docker image
+    working_directory: ~/repo
+
+jobs:
+  build:
+    executor: dotnet-executor
+    steps:
+      - checkout # Checkout the code from the repository
+      - run:
+          name: Restore dependencies
+          command: dotnet restore CIprj_April2024.sln
+      - run:
+          name: Build the project
+          command: dotnet build CIprj_April2024.sln --configuration Release
+      - run:
+          name: Run tests
+          command: dotnet test CIprj_April2024.sln --configuration Release
+
+  deploy:
+    executor: dotnet-executor
+    steps:
+      - checkout
+      - run:
+          name: Publish application
+          command: dotnet publish CIprj_April2024.sln --configuration Release --output ~/repo/out
+      # Example: You could deploy to a server, upload artifacts, or push to a container registry here.
+      - run:
+          name: Deploy application
+          command: echo "Deploying application..."
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
