@@ -1,0 +1,29 @@
+commit 670d5e5dd0a7153feefdd9c91bbfca1fc79a7956
+Author: Adeptus Testicus <m.1377.psn@gmail.com>
+Date:   Sun Apr 28 15:43:38 2024 +0330
+
+    Update02
+
+commit 6fe329639f0fad9c669d1bfd0399ba0c3e3f76d7
+Author: Adeptus Testicus <m.1377.psn@gmail.com>
+Date:   Sun Apr 28 15:39:35 2024 +0330
+
+    Update01
+
+commit 6d0fcf14988d2fe87d2961cda111aaf594466f69
+Author: Adeptus Testicus <m.1377.psn@gmail.com>
+Date:   Sun Apr 28 02:00:51 2024 +0330
+
+    Corrected smth
+
+commit d4686a5d0b2580510a4253e03d7a114bbb251aef
+Author: Adeptus Testicus <m.1377.psn@gmail.com>
+Date:   Sun Apr 28 01:52:10 2024 +0330
+
+    Add project files.
+
+commit 7fa9ee8f6c0ef5565999fe0aaf2236cd4440b58e
+Author: Adeptus Testicus <m.1377.psn@gmail.com>
+Date:   Sun Apr 28 01:52:09 2024 +0330
+
+    Add .gitattributes, .gitignore, and README.md.

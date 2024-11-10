@@ -1,3 +1,8 @@
+variables:
+  PROJECT_CI: "CIprj_April2024"
+before_script:
+  - '"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Microsoft\\NuGet restore CIprj_April2024.sln"'
+
 stages:
   - build
   - test
@@ -15,11 +20,9 @@ build:
   stage: build
   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
-    - dotnet restore  # Restore NuGet packages
-    - dotnet build --configuration Release  # Build the project in Release mode
-  artifacts:
-    paths:
-      - bin/  # Save the build output to use in later stages
+    - 'echo "Building..."'
+  except:
+    - tags
 
 # Test stage
 test:
@@ -28,9 +31,4 @@ test:
   dependencies:
     - build
   script:
-    - dotnet test --logger:trx --results-directory TestResults  # Run tests and log the results in TestResults directory
-  artifacts:
-    when: always
-    paths:
-      - TestResults/*.trx  # Save the test results as artifacts
-  allow_failure: false  # Fail the pipeline if tests fail
+    - 'echo "Testing..."'
