@@ -154,15 +154,15 @@
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
-        private Button button1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label4;
-        private Label label5;
-        private Button button2;
+        public Label label1;
+        public TextBox textBox1;
+        public NumericUpDown numericUpDown1;
+        public Button button1;
+        public Label label2;
+        public Label label3;
+        public TextBox textBox2;
+        public Label label4;
+        public Label label5;
+        public Button button2;
     }
 }
